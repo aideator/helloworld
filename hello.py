@@ -1,13 +1,27 @@
+import argparse
+import time
+
+
 def greet(name="World"):
     """Generate a greeting message."""
     return f"Hello, {name}!"
 
 
 def main():
-    """Main function to demonstrate the greeting."""
-    message = greet()
-    print(message)
-    return message
+    """Main function that outputs greeting at specified interval."""
+    parser = argparse.ArgumentParser(description="Print greeting messages at regular intervals")
+    parser.add_argument(
+        "--interval", 
+        type=float, 
+        default=1.0,
+        help="Time between messages in seconds (default: 1.0)"
+    )
+    args = parser.parse_args()
+    
+    while True:
+        message = greet()
+        print(message, flush=True)
+        time.sleep(args.interval)
 
 
 if __name__ == "__main__":
