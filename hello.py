@@ -4,7 +4,7 @@ import time
 
 def greet(name="World"):
     """Generate a greeting message."""
-    return f"Hello, {name}!"
+    return f"Hello World, I'm brand new"
 
 
 def main():
