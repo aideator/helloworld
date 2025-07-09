@@ -4,6 +4,8 @@ import time
 
 def greet(name="World"):
     """Generate a greeting message."""
+    if name == "World":
+        return "Hello World, I'm brand new"
     return f"Hello, {name}!"
 
 
@@ -24,5 +26,4 @@ def main():
         time.sleep(args.interval)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__":    main()
